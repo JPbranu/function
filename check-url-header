@@ -4,7 +4,11 @@
   */
   
   function check_url_header($url) {
-      
+      //check url
+      if(!$url || !is_string($url) || ! preg_match('/^http(s)?:\/\/[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(\/.*)?$/i', $url)){
+        return false;
+      }
+        
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
       curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
