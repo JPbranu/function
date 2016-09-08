@@ -1,3 +1,5 @@
+<?php
+
   /* Prageeth Sudarshana | Tokyo */
 
   /*
@@ -82,3 +84,5 @@
   
   //Example
   resize_img_size('/home/user/dir/', 800, 600, '/home/user/newdir/', example.jpg);
+
+?>
