@@ -3,7 +3,7 @@
     Check Url Header
   */
   
-  function check_url_header($url) {
+  function check_url_header($url, $staus = false) {
       //check url
       if(!$url || !is_string($url) || ! preg_match('/^http(s)?:\/\/[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(\/.*)?$/i', $url)){
         return false;
@@ -18,7 +18,17 @@
       $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
       
-      return $httpcode;
+      //url true or false
+      if (!empty($staus)) {
+        if ($httpcode == 200) {
+          return true;
+        } else {
+          return false;
+        }
+        
+      } else {
+        return $httpcode;
+      }  
   }
 
 ?>
