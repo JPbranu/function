@@ -5,7 +5,7 @@
    Restful Api
 */
 
-function CallAPI($method, $url, $data = false, $passwd = '') {
+function restful_api($method, $url, $data = false, $passwd = '') {
 
 	$curl = curl_init();
 
